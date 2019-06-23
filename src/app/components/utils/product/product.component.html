@@ -1,0 +1,38 @@
+
+
+<div class="card float-left">
+    <img [src]=productItem.prod_details.img 
+      [alt]=productItem.brand style="width:300px;height: 150px;">
+    <h3>{{productItem.brand}}</h3>
+    <p class="price">{{productItem.prod_details.price}}</p>
+    <p>
+      <sub class="actual-price">{{productItem.prod_details.actual_price}}</sub>&nbsp; 
+      <sub class="discount">{{productItem.prod_details.discount}}</sub>
+    </p>
+    <p>{{productItem.desc}}</p>
+    {{productItemIndex}}
+    <hr>
+    <div>
+        <div style="float: left; width: 50%; margin-bottom: 13px;">
+            Size-
+          <span *ngFor="let size of productItem.prod_details.size; let i = index" >
+            {{size}}
+          </span>
+        </div>
+        <div style="float: right; width: 50%">
+          <!-- <span *ngFor="let _color of productItem.prod_details.color; let i = index" > -->
+              <div 
+                *ngFor="let _color of productItem.prod_details.color; let i = index"
+                id="{{productItemIndex}}{{i}}{{_color}}"
+                [ngStyle]="{'background-color': _color}" 
+                class="display-color-circle"
+                (click)="choosenColor($event)" ></div>
+            <!-- </span> -->
+        </div>
+    </div>
+    
+    <p>
+      <button>Add to Cart</button>
+      <button (click)="buy(productItem)" >Buy Now</button>
+    </p>
+</div>

@@ -1,0 +1,48 @@
+<!-- <div class="container"> -->
+  <div class="row custom-row">
+    <div class="col-lg-3 col-md-3">
+      <div>
+          <ul class="list-group">
+              <li class="list-group-item" 
+               routerLink="/men/sports-shoes" 
+               (click)="showProducts('sports')" id='sports'>Sports Shoes</li>
+              <li class="list-group-item"
+               routerLink="/men/formal-shoes"
+               (click)="showProducts('formal')" id='formal'>Formal Shoes</li>
+              <li class="list-group-item"
+              routerLink="/men/sandals-floaters"
+              (click)="showProducts('sandals')" id='sandals'>Sandals & Floaters</li>
+              <li class="list-group-item"
+              routerLink="/men/flip-flops"
+              (click)="showProducts('flip')" id='flip'>Flip- Flops</li>
+              <li class="list-group-item"
+              routerLink="/men/loafers"
+              (click)="showProducts('loafers')" id='loafers'>Loafers</li>
+              <li class="list-group-item"
+              routerLink="/men/boots"
+              (click)="showProducts('boots')" id='boots'>Boots</li>
+              <li class="list-group-item"
+              routerLink="/men/running-shoes"
+              (click)="showProducts('running')" id='running'>Running Shoes</li>
+              <li class="list-group-item"
+              routerLink="/men/sneakers"
+              (click)="showProducts('sneakers')" id='sneakers'>Sneakers</li>
+          </ul>
+      </div>
+    </div>
+    <div class="col-lg-1 col-md-1">
+      <div class="v-line"></div>
+    </div>
+    <div class="col-lg-8 col-md-8 custom-container">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+<!-- </div> -->
+
+
+<!-- {{ menCollection }}
+<div class="card">
+    <div class="card-header">Header</div>
+    <div class="card-body">Content</div> 
+    <div class="card-footer">Footer</div>
+  </div> -->

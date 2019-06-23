@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-lg-offset-3"><br>
+      <form>
+        <div class="formgroup">
+          <label for="uname">User Name</label>
+          <input type="text" id="uname" class="form-control"/>
+        </div>
+        <div class="formgroup">
+          <label for="pwd">Password</label>
+          <input type="password" id="pwd" class="form-control"/>
+        </div>
+        <div class="formgroup">
+          <a class="nav-link" routerLink='/registration'>don't have account ?</a>
+            <button class="btn btn-secondary"
+            (click)="login(true)" >Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

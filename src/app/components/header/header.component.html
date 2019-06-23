@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <br>
+  <p>Our Shopping Cart program allows visitors to your on-line shopping site to collect items in a virtual shopping cart over multiple product web pages without losing the items ordered.
+     Our cart keeps track of what the shopper has ordered with a SID (Shopper I.D).</p>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark  sticky-top">
+  <i><a class="navbar-brand" href="#">MyCart</a></i>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" 
+  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+  aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink='/men'>Men</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/women'>Women</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/kids'>Kids</a>
+      </li>
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/login'>Login</a>
+          </li> 
+          <li class="nav-item">
+              <a class="nav-link" routerLink='/login'>Log Out</a>
+          </li>        
+      </ul>
+    </form>
+  </div>
+</nav>
