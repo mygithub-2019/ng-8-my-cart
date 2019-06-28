@@ -8,9 +8,14 @@ import { MenService } from '../../men.service';
 })
 export class BootsComponent implements OnInit {
   menCollection: Array<any> = [];
+  itemDetails = "";
   constructor(private _menProductsService: MenService) { }
 
   ngOnInit() {
     this.menCollection = this._menProductsService.getMenProducts('menBoots');
+  }
+  showData(d){
+    //this.itemDetails = d;
+    alert('added.' + d);
   }
 }

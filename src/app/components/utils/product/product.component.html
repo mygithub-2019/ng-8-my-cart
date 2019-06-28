@@ -1,5 +1,3 @@
-
-
 <div class="card float-left">
     <img [src]=productItem.prod_details.img 
       [alt]=productItem.brand style="width:300px;height: 150px;">
@@ -10,7 +8,7 @@
       <sub class="discount">{{productItem.prod_details.discount}}</sub>
     </p>
     <p>{{productItem.desc}}</p>
-    {{productItemIndex}}
+    <!-- {{productItemIndex}} -->
     <hr>
     <div>
         <div style="float: left; width: 50%; margin-bottom: 13px;">
@@ -32,7 +30,8 @@
     </div>
     
     <p>
-      <button>Add to Cart</button>
-      <button (click)="buy(productItem)" >Buy Now</button>
+      <button (click)="addToCart(productItem)">Add to Cart</button>
+      <button (click)="buyNow(productItem)">Buy Now</button>
     </p>
+    <app-toast [msg]='addToCartMsg'></app-toast>
 </div>

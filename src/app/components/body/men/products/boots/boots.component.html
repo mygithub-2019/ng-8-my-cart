@@ -2,8 +2,12 @@
     <div class="row">
       <!-- <div class="col-lg-6"> -->
           <div *ngFor="let item of menCollection; let i = index;">
-              <app-product [productItem]='item' [productItemIndex]='i'></app-product>
+              <app-product 
+                [productItem]='item' 
+                [productItemIndex]='i'
+                (selectedProductEmitter)="showData(item)"></app-product>
             </div>
       <!-- </div> -->
     </div>
+    {{itemDetails}}
   </div>

@@ -14,6 +14,7 @@ import { LoafersComponent } from './components/body/men/products/loafers/loafers
 import { BootsComponent } from './components/body/men/products/boots/boots.component';
 import { RunningComponent } from './components/body/men/products/running/running.component';
 import { SneakersComponent } from './components/body/men/products/sneakers/sneakers.component';
+import { MycartComponent } from './components/mycart/mycart.component';
 
 const routes: Routes = [
   {path: 'men', component: MenComponent,
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path: 'kids', component: KidsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegisterComponent},
-  {path: '**', component: NotFoundComponent}
+  {path: 'mycart', component: MycartComponent},
+  {path: '**', component: MenComponent}
 ];
 
 @NgModule({

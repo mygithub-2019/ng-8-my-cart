@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RegisterService } from './register.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,16 +9,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  //showAlert: boolean = false;
+  propToastType: string;
+  showToaster: boolean = false;
   constructor(
-    private router:Router
+    private router:Router, 
+    private _regService: RegisterService
     ) { }
 
   ngOnInit() {
+    this.propToastType = "";
   }
 
-  register(status: boolean){
+  register(formData: NgForm){
     //this.showAlert = status;
-    this.router.navigate(['/login']);
+    //this.router.navigate(['/login']);
+    if(!formData.valid){
+      return
+    }
+    const email = formData.value.email;
+    const pwd = formData.value.pwd;
+    this._regService.authSignUp(email, pwd).subscribe(
+      res => {
+      this.propToastType = "success";
+      this.showToaster = true;
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 1000);
+      
+    }, errr => {
+      this.propToastType = errr;
+      this.showToaster = true;
+      console.log(errr);
+    })
+    formData.reset();
   }
 }

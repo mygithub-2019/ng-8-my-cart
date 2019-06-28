@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -23,7 +23,9 @@ import { BootsComponent } from './components/body/men/products/boots/boots.compo
 import { RunningComponent } from './components/body/men/products/running/running.component';
 import { SneakersComponent } from './components/body/men/products/sneakers/sneakers.component';
 import { ProductComponent } from './components/utils/product/product.component';
-
+import { MycartComponent } from './components/mycart/mycart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastComponent } from './components/utils/toast/toast.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,11 +48,15 @@ import { ProductComponent } from './components/utils/product/product.component';
     BootsComponent,
     RunningComponent,
     SneakersComponent,
-    ProductComponent
+    ProductComponent,
+    MycartComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
