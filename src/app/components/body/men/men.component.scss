@@ -4,8 +4,7 @@
         cursor: pointer;
     }
     ul li:hover{
-        border-left: 6px solid #0a77ec;
-        color: #6bacf1;
+        border-left: 6px solid #007bff;
         font-style: italic;
     }
     .v-line{
@@ -17,8 +16,8 @@
     }
 }
 .selected-item{
-    border-left: 6px solid #0a77ec;
-    color: #6bacf1;
+    border-left: 6px solid #007bff;
+    background-color: #007bff6e;
     font-style: italic;
 }
 .custom-container{

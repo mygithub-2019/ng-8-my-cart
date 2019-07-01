@@ -12,6 +12,7 @@ export class ProductComponent implements OnInit {
   @Input() productItemIndex: any
   @Output() selectedProductEmitter = new EventEmitter();
   addToCartMsg: string = '';
+  //quintity: number = 0;
   constructor(private _myCartServ: MycartService) { }
 
   ngOnInit() {
@@ -31,8 +32,18 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(selectedItem){
+    //this.quintity++;
+    if(selectedItem.qty){
+      selectedItem.qty++
+    }else{
+      selectedItem.qty = 1;
+    }
     this._myCartServ.addItems(selectedItem);
-    this.addToCartMsg = 'Item added to cart.';
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(() => { 
+      x.className = x.className.replace("show", ""); 
+    }, 3000);
     //this.selectedProductEmitter.emit(selectedItem);
   }
   buyNow(productInfo){

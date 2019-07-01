@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MycartService } from './mycart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mycart',
@@ -8,7 +9,8 @@ import { MycartService } from './mycart.service';
 })
 export class MycartComponent implements OnInit {
   items = [];
-  constructor(private _myCartServ: MycartService) { }
+  constructor(private _myCartServ: MycartService,
+      private _router: Router) { }
 
   ngOnInit() {
     this.items = this._myCartServ.getItems();
@@ -18,5 +20,11 @@ export class MycartComponent implements OnInit {
       return true;
     }
     return false;
+  }
+  continueShopping(){
+    this._router.navigate(['/men']);
+  }
+  getTotalCartPrice(){
+    return this._myCartServ.getCartAmount();
   }
 }

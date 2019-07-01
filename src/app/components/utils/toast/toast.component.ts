@@ -14,8 +14,8 @@ export class ToastComponent implements OnInit {
   constructor() { }
   ngOnInit() {
     //this.title= this.toastType;
-    setTimeout(() => {
-      this.showToast = false;
-    }, 2000)
+    // setTimeout(() => {
+    //   this.showToast = false;
+    // }, 2000)
   }
 }

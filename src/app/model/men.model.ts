@@ -3,10 +3,10 @@ export const menSports = [
         'brand': 'Nike',
         'desc':'REVOLUTION 3 Sports Shoes For Men',
         'prod_details':{
-            'price': '₹1,999',
+            'price': '1999',
             'size': [7,8,9,10],
             'color':['Yellow', 'Red', 'Grey', 'Blue'],
-            'actual_price': '₹3,695',
+            'actual_price': '3,695',
             'discount':'45% off',
             'img':'https://rukminim1.flixcart.com/image/880/1056/jve4pe80/shoe/c/2/c/819300-001-new-11-nike-dark-grey-white-black-original-imafgb2h8j5zqz37.jpeg?q=50'
         }
@@ -15,10 +15,10 @@ export const menSports = [
         'brand': 'Fila',
         'desc':'CARMEN Sports Shoes For Men',
         'prod_details':{
-            'price': '₹999',
+            'price': '999',
             'size': [7,8,9,10],
             'color':['Green', 'Red', 'Grey', 'Blue'],
-            'actual_price': '₹2,099',
+            'actual_price': '2,099',
             'discount':'55% off',
             'img':'https://rukminim1.flixcart.com/image/880/1056/jn0msnk0/shoe/a/v/s/11006410-fw-18-9-fila-nvy-blk-original-imaf9s6pcpjs8mjy.jpeg?q=50'
         }
@@ -29,10 +29,10 @@ export const menFormal = [
         'brand': 'Lee Cooper ',
         'desc':'Lace Up For Men',
         'prod_details':{
-            'price': '₹1,298',
+            'price': '1298',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
-            'actual_price': '₹2,399',
+            'actual_price': '2,399',
             'discount':'59% off',
             'img':'https://rukminim1.flixcart.com/image/880/1056/jql8fbk0/shoe/m/t/f/lc9230-41-lee-cooper-brownp1-original-imafckz5cn4gvj7t.jpeg?q=50'
         }
@@ -41,10 +41,10 @@ export const menFormal = [
         'brand': 'Bata',
         'desc':'Synthetic Leather For Men',
         'prod_details':{
-            'price': '₹769',
+            'price': '769',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
-            'actual_price': '₹1,399',
+            'actual_price': '1,399',
             'discount':'35% off',
             'img':'https://rukminim1.flixcart.com/image/880/1056/shoe/u/8/u/black-821343-bata-6-original-imaeafyauwexmnc6.jpeg?q=50'
         }
@@ -55,8 +55,8 @@ export const menSandals  = [
         'brand': 'REEBOK',
         'desc':'Men CAMEL Sandals',
         'prod_details':{
-            'price': '₹2,336',
-            'actual_price': '₹3,595',
+            'price': '2336',
+            'actual_price': '3,595',
             'size': [7,8,9,10],
             'color':['Green', 'Red'],
             'discount':'35% off',
@@ -67,8 +67,8 @@ export const menSandals  = [
         'brand': 'ADIDAS',
         'desc':'Men CBLACK/SCARLE Sandals',
         'prod_details':{
-            'price': '₹1,889',
-            'actual_price': '₹2,999',
+            'price': '1889',
+            'actual_price': '2,999',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
             'discount':'37% off',
@@ -81,8 +81,8 @@ export const menFlips  = [
         'brand': 'Nike',
         'desc':'CHROMA THONG 5 Slippers',
         'prod_details':{
-            'price': '₹897',
-            'actual_price': '₹1,495',
+            'price': '897',
+            'actual_price': '1495',
             'discount':'40% off',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
@@ -93,8 +93,8 @@ export const menFlips  = [
         'brand': 'Puma',
         'desc':'Slippers',
         'prod_details':{
-            'price': '₹1,424',
-            'actual_price': '₹2,999',
+            'price': '1424',
+            'actual_price': '2,999',
             'discount':'43% off',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
@@ -107,8 +107,8 @@ export const menLoafers  = [
         'brand': 'Provogue',
         'desc':'Loafers For Men',
         'prod_details':{
-            'price': '₹714',
-            'actual_price': '₹1,299',
+            'price': '714',
+            'actual_price': '1,299',
             'discount':'45% off',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
@@ -119,8 +119,8 @@ export const menLoafers  = [
         'brand': 'Lee Cooper',
         'desc':'Loafers For Men',
         'prod_details':{
-            'price': '₹1,499',
-            'actual_price': '₹2,499',
+            'price': '1499',
+            'actual_price': '2,499',
             'discount':'40% off',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
@@ -133,8 +133,8 @@ export const menBoots  = [
         'brand': 'Lee Cooper',
         'desc':'Boots For Men',
         'prod_details':{
-            'price': '₹2,364',
-            'actual_price': '₹4,299',
+            'price': '2364',
+            'actual_price': '4,299',
             'discount':'45% off',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
@@ -145,8 +145,8 @@ export const menBoots  = [
         'brand': 'Woodland',
         'desc':'Loafers For Men',
         'prod_details':{
-            'price': '₹2,466',
-            'actual_price': '₹3,995',
+            'price': '2466',
+            'actual_price': '3,995',
             'discount':'38% off',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
@@ -159,8 +159,8 @@ export const menRunning  = [
         'brand': 'Nike',
         'desc':'ZOOM STRIKE Running Shoes',
         'prod_details':{
-            'price': '₹3,737',
-            'actual_price': '₹6,795',
+            'price': '3737',
+            'actual_price': '6,795',
             'discount':'45% off',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
@@ -171,8 +171,8 @@ export const menRunning  = [
         'brand': 'Asics',
         'desc':'SS 19 Running Shoes For Men',
         'prod_details':{
-            'price': '₹4,179',
-            'actual_price': '₹7,999',
+            'price': '4179',
+            'actual_price': '7,999',
             'discount':'47% off',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
@@ -185,10 +185,10 @@ export const menSneakers = [
         'brand': 'Provogue',
         'desc':'PRO-NP-AW05 Sneakers For Men',
         'prod_details':{
-            'price': '₹760',
+            'price': '760',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
-            'actual_price': '₹1,899',
+            'actual_price': '1,899',
             'discount':'59% off',
             'img':'https://rukminim1.flixcart.com/image/880/1056/jmmce4w0/shoe/s/b/p/pro-np-aw05-7-provogue-lt-grey-original-imaf9e63zdtzzgtc.jpeg?q=50'
         }
@@ -197,10 +197,10 @@ export const menSneakers = [
         'brand': 'Puma',
         'desc':'Icon IDP Sneakers For Men',
         'prod_details':{
-            'price': '₹3,299',
+            'price': '3299',
             'size': [7,8,9,10],
             'color':['Black', 'Red', 'Grey', 'Blue'],
-            'actual_price': '₹4,099',
+            'actual_price': '4,099',
             'discount':'35% off',
             'img':'https://rukminim1.flixcart.com/image/880/1056/jvtujrk0/shoe/u/h/r/371505-9-puma-ponderosa-pine-white-original-imafghwqpwgykqud.jpeg?q=50'
         }

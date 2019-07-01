@@ -2,7 +2,7 @@
     <img [src]=productItem.prod_details.img 
       [alt]=productItem.brand style="width:300px;height: 150px;">
     <h3>{{productItem.brand}}</h3>
-    <p class="price">{{productItem.prod_details.price}}</p>
+    <p class="price">{{productItem.prod_details.price | currency:'&#8377;'}}</p>
     <p>
       <sub class="actual-price">{{productItem.prod_details.actual_price}}</sub>&nbsp; 
       <sub class="discount">{{productItem.prod_details.discount}}</sub>
@@ -33,5 +33,7 @@
       <button (click)="addToCart(productItem)">Add to Cart</button>
       <button (click)="buyNow(productItem)">Buy Now</button>
     </p>
-    <app-toast [msg]='addToCartMsg'></app-toast>
+    
+    <!-- <app-toast [msg]='addToCartMsg'></app-toast>-->
 </div>
+<div id="snackbar">Item added to cart.</div>

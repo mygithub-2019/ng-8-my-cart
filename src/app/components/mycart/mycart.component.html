@@ -12,26 +12,34 @@
                   <tr>
                     <th>S No</th>
                     <th>Product Name</th>
+                    <th>Qty</th>
                     <th>Cost</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let item of items; let i = index;" >
-                    <td>{{i + 1}}</td>
-                    <td>{{item.brand}}</td>
-                    <td>{{item["prod_details"].price}}</td>
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ item.brand }}</td>
+                    <td>
+                      <span class="decrease" title="Decrease">&nbsp;-&nbsp;</span> 
+                      <span class="increase" title="Increase">&nbsp;+&nbsp;</span>
+                    </td>
+                    <td>{{ item["prod_details"].price | currency:'&#8377;' }}</td>
                   </tr>
                   <tr>
                       <td></td>
-                      <td><i><b>Total</b></i></td>
-                      <td><i><b>1,000</b></i></td>
+                      <td></td>
+                      <td colspan="2"><i><b>
+                          Total: {{ getTotalCartPrice() | currency:'&#8377;'}}
+                      </b></i></td>
                     </tr>
                 </tbody>
               </table>
               <p *ngIf="isCartEmpty()" >Your cart is empty...</p>
             </div>
-            <div class="card-footer text-muted">
-              <button class="btn btn-primary"> < Continue Shopping </button>&nbsp;
+            <div *ngIf="!isCartEmpty()" class="card-footer text-muted">
+              <button class="btn btn-primary"
+                (click)="continueShopping()" > < Continue Shopping </button>&nbsp;
               <button class="btn btn-primary">Place Order ></button>
             </div>
           </div>

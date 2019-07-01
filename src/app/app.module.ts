@@ -25,7 +25,7 @@ import { SneakersComponent } from './components/body/men/products/sneakers/sneak
 import { ProductComponent } from './components/utils/product/product.component';
 import { MycartComponent } from './components/mycart/mycart.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ToastComponent } from './components/utils/toast/toast.component'; 
+import { ToastComponent } from './components/utils/toast/toast.component';
 @NgModule({
   declarations: [
     AppComponent,
