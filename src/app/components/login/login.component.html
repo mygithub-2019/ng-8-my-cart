@@ -26,9 +26,7 @@
             (click)="login(_loginForm)"
             [disabled]='!_loginForm.valid'>Login</button>
         </div>
-        <app-toast 
-          *ngIf="showToaster" 
-          [toastType]="propToastType"></app-toast>
+        <app-alert *ngIf="showAlert" ></app-alert>
       </form>
     </div>
   </div>

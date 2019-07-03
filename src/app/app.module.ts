@@ -24,8 +24,9 @@ import { RunningComponent } from './components/body/men/products/running/running
 import { SneakersComponent } from './components/body/men/products/sneakers/sneakers.component';
 import { ProductComponent } from './components/utils/product/product.component';
 import { MycartComponent } from './components/mycart/mycart.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastComponent } from './components/utils/toast/toast.component';
+import { HeaderInterceptor } from './components/login/auth-intercepter.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,9 @@ import { ToastComponent } from './components/utils/toast/toast.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass:HeaderInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

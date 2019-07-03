@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { throwError, Subject, BehaviorSubject } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { User } from './user.model';
 export interface RegResponseData {
   kind 	:string,
   idToken: 	string,
@@ -16,6 +17,8 @@ export interface RegResponseData {
 })
 export class LoginService {
 
+  //user = new Subject<User>(); //approach-1
+  user = new BehaviorSubject<User>(null); //approach-2
   userLoggedIn: boolean = false;
   constructor(private _http: HttpClient) { }
 
@@ -30,7 +33,30 @@ export class LoginService {
     {
       email: email,
       password: pwd
-    }).pipe(catchError(this.errorHandler));;
+    }).pipe(
+      catchError(this.errorHandler),
+      tap(resData=> {
+        this.handleAuthentication(
+          resData.email,
+          resData.localId,
+          resData.idToken,
+          +resData.expiresIn
+        );
+      })
+      )
+  }
+
+  private handleAuthentication(
+    email: string,
+    userId: string,
+    token: string,
+    expiresIn: number
+  ){
+    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
+    const _user = new User(
+      email, userId, token, expirationDate
+    );
+    this.user.next(_user);
   }
   //
   private errorHandler(eRes: HttpErrorResponse){
@@ -48,7 +74,14 @@ export class LoginService {
         case "USER_DISABLED":
           errorMsg = "User disabled.";
           break;
+        case "INVALID_EMAIL":
+          errorMsg = "Entered invalid email.";
+        break;
       }
       return throwError(errorMsg);
+  }
+
+  logOut(){
+    this.user.next(null);
   }
 }

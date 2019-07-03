@@ -3,6 +3,7 @@ import { LoginService, RegResponseData} from './login.service';
 import {NgForm} from '@angular/forms';
 import { Observable, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,12 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
   propToastType: string = "";
-  showToaster: boolean = false;
+  showAlert: boolean = false;
   router: any;
-  constructor(private _loginService: LoginService) { }
+  authObs: Observable<RegResponseData>;
+  constructor(
+    private _loginService: LoginService,
+    private _router: Router) { }
 
   ngOnInit() {
     
@@ -22,26 +26,46 @@ export class LoginComponent implements OnInit {
   //   //this._loginService.setUserLoggedInStatus(status);
   // }
   login(loginForm: NgForm){
-    let authObs: Observable<RegResponseData>;
+    
     //console.log(loginForm);
-    this._loginService.authLogin(
+    /*this._loginService.authLogin(
       loginForm.value.email,
       loginForm.value.pwd).subscribe(
         res => {
-          this.showToaster = true;
+          this.showAlert = true;
           this.propToastType = "s";
           console.log(res);
+          this.router.navigate(['/men']);
         },
         err => {
-          this.showToaster = true;
+          this.showAlert = true;
           this.propToastType = err;
           console.log(err);
           setTimeout(() => {
             this.router.navigate(['/login']);
           }, 1000);
         }
+      );*/
+      let _authObs = this._loginService.authLogin(
+        loginForm.value.email,
+        loginForm.value.pwd);
+
+      _authObs.subscribe(
+        res => {
+          this.showAlert = true;
+          this.propToastType = "s";
+          console.log(res);
+          this._router.navigate(['/men']);
+        },
+        err => {
+          this.showAlert = true;
+          this.propToastType = err;
+          console.log(err);
+          setTimeout(() => {
+            this._router.navigate(['/login']);
+          }, 500);
+        }
       );
-      
     loginForm.reset();
   }
 
