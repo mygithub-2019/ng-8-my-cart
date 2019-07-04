@@ -17,8 +17,9 @@ export interface RegResponseData {
 })
 export class LoginService {
 
-  //user = new Subject<User>(); //approach-1
-  user = new BehaviorSubject<User>(null); //approach-2
+  tokenExpirationTimer: any;
+  //user = new Subject<User>(); //approach-1: Emit an event
+  user = new BehaviorSubject<User>(null); //approach-2: Emit an event
   userLoggedIn: boolean = false;
   constructor(private _http: HttpClient) { }
 
@@ -57,6 +58,32 @@ export class LoginService {
       email, userId, token, expirationDate
     );
     this.user.next(_user);
+    //For auto logout
+    //this.autoLogout(expiresIn * 1000);
+    //For auto login
+    localStorage.setItem('userData', JSON.stringify(_user))
+  }
+  autoLogin(){
+    const userData: {
+      email: string,
+      id: string,
+      _token: string,
+      _tokenExpirationDate: string
+    } = JSON.parse(localStorage.getItem('userData'));
+    if(!userData){
+      return;
+    }
+    const loadedUser = new User(
+      userData.email, 
+      userData.id, 
+      userData._token, 
+      new Date(userData._tokenExpirationDate)
+    );
+    if(loadedUser){
+      const expirationTime = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
+      this.user.next(loadedUser);
+      this.autoLogout(expirationTime);
+    }
   }
   //
   private errorHandler(eRes: HttpErrorResponse){
@@ -82,6 +109,16 @@ export class LoginService {
   }
 
   logOut(){
+    localStorage.removeItem('userData');
+    if(this.tokenExpirationTimer){
+      clearTimeout(this.tokenExpirationTimer)
+    }
+    this.tokenExpirationTimer = null;
     this.user.next(null);
+  }
+  autoLogout(expirationDuration: number){
+    this.tokenExpirationTimer = setInterval(() => {
+      this.logOut();
+    }, expirationDuration);
   }
 }
