@@ -34,9 +34,11 @@
               (click)="register(formData)"
               [disabled]="!formData.valid">Register</button>
           </div>
-          <app-toast 
+          <!-- <app-toast 
           *ngIf="showToaster" 
-          [toastType]="propToastType"></app-toast>
+          [toastType]="propToastType"></app-toast> -->
+          <app-model-alert
+            *ngIf="showModelAlert" ></app-model-alert>
         </form>
       </div>
     </div>

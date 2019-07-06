@@ -16,6 +16,7 @@ import { RunningComponent } from './components/body/men/products/running/running
 import { SneakersComponent } from './components/body/men/products/sneakers/sneakers.component';
 import { MycartComponent } from './components/mycart/mycart.component';
 import { AuthGuard } from './components/login/auth.guard';
+import { ProductDetailComponent } from './components/utils/product/product-detail/product-detail.component';
 
 const routes: Routes = [
   {path: 'men', component: MenComponent,
@@ -40,6 +41,7 @@ const routes: Routes = [
     component: MycartComponent,
     canActivate: [AuthGuard]
   },
+  //{path: "details", component: ProductDetailComponent},
   {path: '**', component: MenComponent}
 ];
 

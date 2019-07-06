@@ -26,7 +26,12 @@
             (click)="login(_loginForm)"
             [disabled]='!_loginForm.valid'>Login</button>
         </div>
-        <app-alert *ngIf="showAlert" ></app-alert>
+        <!-- <app-alert *ngIf="showAlert" ></app-alert> -->
+        <app-model-alert 
+          *ngIf="showModelAlert" 
+          [message]='errorMsg' 
+          (close) = 'onCloseModelAlert()'
+        ></app-model-alert>
       </form>
     </div>
   </div>

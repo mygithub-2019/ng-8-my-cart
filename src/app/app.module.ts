@@ -27,6 +27,8 @@ import { MycartComponent } from './components/mycart/mycart.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastComponent } from './components/utils/toast/toast.component';
 import { HeaderInterceptor } from './components/login/auth-intercepter.service';
+import { ProductDetailComponent } from './components/utils/product/product-detail/product-detail.component';
+import { ModelAlertComponent } from './components/utils/model-alert/model-alert.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,9 @@ import { HeaderInterceptor } from './components/login/auth-intercepter.service';
     SneakersComponent,
     ProductComponent,
     MycartComponent,
-    ToastComponent
+    ToastComponent,
+    ProductDetailComponent,
+    ModelAlertComponent
   ],
   imports: [
     BrowserModule,

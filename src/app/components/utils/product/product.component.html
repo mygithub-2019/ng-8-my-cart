@@ -1,4 +1,4 @@
-<div class="card float-left">
+<div class="card float-left" [routerLink]="['/details']">
     <img [src]=productItem.prod_details.img 
       [alt]=productItem.brand style="width:300px;height: 150px;">
     <h3>{{productItem.brand}}</h3>
@@ -9,7 +9,6 @@
     </p>
     <p>{{productItem.desc}}</p>
     <!-- {{productItemIndex}} -->
-    <hr>
     <div>
         <div style="float: left; width: 50%; margin-bottom: 13px;">
             Size-
@@ -28,7 +27,7 @@
             <!-- </span> -->
         </div>
     </div>
-    
+    <hr>
     <p>
       <button (click)="addToCart(productItem)">Add to Cart</button>
       <button (click)="buyNow(productItem)">Buy Now</button>

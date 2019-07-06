@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  propToastType: string = "";
-  showAlert: boolean = false;
+  errorMsg: string = "";
+  showModelAlert: boolean = false;
   router: any;
   authObs: Observable<RegResponseData>;
   constructor(
@@ -52,33 +52,23 @@ export class LoginComponent implements OnInit {
 
       _authObs.subscribe(
         res => {
-          this.showAlert = true;
-          this.propToastType = "s";
+          this.showModelAlert = true;
+          //this.propToastType = "s";
           console.log(res);
           this._router.navigate(['/men']);
         },
         err => {
-          this.showAlert = true;
-          this.propToastType = err;
-          console.log(err);
-          setTimeout(() => {
-            this._router.navigate(['/login']);
-          }, 500);
+          this.showModelAlert = true;
+          this.errorMsg = err;
+          // setTimeout(() => {
+          //   this._router.navigate(['/login']);
+          // }, 500);
         }
       );
     loginForm.reset();
   }
 
-  //
-  private errorHandler(eRes: HttpErrorResponse){
-    let errorMsg = "Error occurred authSignUp.";
-      if(!eRes.error || !eRes.error.error){
-        return throwError(errorMsg)
-      }
-      switch(eRes.error.error.message){
-        case "EMAIL_EXIST":
-          errorMsg = "You have already registered.";
-          break;
-      }
+  onCloseModelAlert(){
+    this.showModelAlert = false;
   }
 }

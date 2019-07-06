@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegisterService } from './register.service';
 import { NgForm } from '@angular/forms';
@@ -11,6 +11,7 @@ import { NgForm } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   propToastType: string;
   showToaster: boolean = false;
+  showModelAlert: boolean = false;
   constructor(
     private router:Router, 
     private _regService: RegisterService
@@ -32,6 +33,7 @@ export class RegisterComponent implements OnInit {
       res => {
       this.propToastType = "success";
       this.showToaster = true;
+      this.showModelAlert = true;
       setTimeout(() => {
         this.router.navigate(['/login']);
       }, 1000);
@@ -39,6 +41,7 @@ export class RegisterComponent implements OnInit {
     }, errr => {
       this.propToastType = errr;
       this.showToaster = true;
+      this.showModelAlert = true;
       console.log(errr);
     })
     formData.reset();
