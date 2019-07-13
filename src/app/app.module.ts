@@ -29,6 +29,10 @@ import { ToastComponent } from './components/utils/toast/toast.component';
 import { HeaderInterceptor } from './components/login/auth-intercepter.service';
 import { ProductDetailComponent } from './components/utils/product/product-detail/product-detail.component';
 import { ModelAlertComponent } from './components/utils/model-alert/model-alert.component';
+
+//Custom module imports
+import { MenModule } from './components/body/men/men.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,15 +47,15 @@ import { ModelAlertComponent } from './components/utils/model-alert/model-alert.
     LoginComponent,
     RegisterComponent,
     AlertComponent,
-    SportsComponent,
-    FormalComponent,
-    SandalsComponent,
-    FlipComponent,
-    LoafersComponent,
-    BootsComponent,
-    RunningComponent,
-    SneakersComponent,
-    ProductComponent,
+    // SportsComponent,
+    // FormalComponent,
+    // SandalsComponent,
+    // FlipComponent,
+    // LoafersComponent,
+    // BootsComponent,
+    // RunningComponent,
+    // SneakersComponent,
+    //ProductComponent,
     MycartComponent,
     ToastComponent,
     ProductDetailComponent,
@@ -61,7 +65,8 @@ import { ModelAlertComponent } from './components/utils/model-alert/model-alert.
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MenModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass:HeaderInterceptor, multi: true
