@@ -8,7 +8,7 @@ $discount-color: #45d245;
     text-align: center;
     font-family: arial;
     margin: 10px;
-    cursor: pointer;
+    //cursor: pointer;
     .price {
       color: $price-color;
       font-size: $price-size;
@@ -31,6 +31,9 @@ $discount-color: #45d245;
       padding: 1px;
       margin: 4px;
       display: inline-block;
+    }
+    p[title]{
+      cursor: pointer;
     }
 }
 .card button {

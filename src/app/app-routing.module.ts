@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MenComponent } from './components/body/men/men.component';
-import { WomenComponent } from './components/body/women/women.component';
 import { KidsComponent } from './components/body/kids/kids.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/login/login.component';
@@ -29,8 +28,13 @@ const routes: Routes = [
       {path: 'boots', component: BootsComponent},
       {path: 'running-shoes', component: RunningComponent},
       {path: 'sneakers', component: SneakersComponent}
-    ]},
-  {path: 'women', component: WomenComponent},
+    ]
+  },
+  {
+    path: 'women', 
+    //Lazy loading Women module
+    loadChildren: () => import('./components/body/women/women.module').then(mod => mod.WomenModule),
+  },
   {path: 'kids', 
     component: KidsComponent,
     //canActivate: [AuthGuard]
@@ -41,7 +45,7 @@ const routes: Routes = [
     component: MycartComponent,
     canActivate: [AuthGuard]
   },
-  //{path: "details", component: ProductDetailComponent},
+  {path: 'details', component: ProductDetailComponent},
   {path: '**', component: MenComponent}
 ];
 
