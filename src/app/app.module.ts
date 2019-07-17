@@ -23,7 +23,7 @@ import { ModelAlertComponent } from './components/utils/model-alert/model-alert.
 //Custom module imports
 import { MenModule } from './components/body/men/men.module';
 import { UnderConstructionComponent } from './components/utils/under-construction/under-construction.component';
-
+import { CoreModule } from './app.core.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,11 +48,14 @@ import { UnderConstructionComponent } from './components/utils/under-constructio
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MenModule
+    MenModule,
+    CoreModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS, useClass:HeaderInterceptor, multi: true
-  }],
+  providers: [
+    // {
+    //   provide: HTTP_INTERCEPTORS, useClass:HeaderInterceptor, multi: true
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
