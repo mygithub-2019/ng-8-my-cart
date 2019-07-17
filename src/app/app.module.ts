@@ -8,7 +8,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BodyComponent } from './components/body/body.component';
 import { GoUpComponent } from './components/go-up/go-up.component';
 import { MenComponent } from './components/body/men/men.component';
-import { KidsComponent } from './components/body/kids/kids.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -32,7 +31,7 @@ import { CoreModule } from './app.core.module';
     FooterComponent,
     GoUpComponent,
     MenComponent,
-    KidsComponent,
+    //KidsComponent, //After lazy loading we should remove this
     NotFoundComponent,
     LoginComponent,
     RegisterComponent,

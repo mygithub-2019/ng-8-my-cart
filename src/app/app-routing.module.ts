@@ -36,8 +36,10 @@ const routes: Routes = [
     loadChildren: () => import('./components/body/women/women.module').then(mod => mod.WomenModule),
   },
   {path: 'kids', 
-    component: KidsComponent,
+    //component: KidsComponent,
     //canActivate: [AuthGuard]
+    //Lazy loading Women module
+    loadChildren: () => import('./components/body/kids/kids.module').then(mod => mod.KidsModule)
   },
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegisterComponent},

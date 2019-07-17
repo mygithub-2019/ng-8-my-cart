@@ -8,7 +8,7 @@ import { WomenComponent } from './products/women.component';
 //Routers
 const _routes: Routes = [
     {
-        path: '',
+        path: '', //Important
         component: WomenComponent,
             children:[
             {path: '', component: SareesComponent},
